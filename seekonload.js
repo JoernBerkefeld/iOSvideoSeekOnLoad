@@ -1,3 +1,5 @@
+// https://github.com/JoernBerkefeld/iOSvideoSeekOnLoad / MIT License 
+
 // seekToInitially (float) : video-time in seconds
 function loadingSeek(seekToInitially, callback) {
 	var video = $("video"),
