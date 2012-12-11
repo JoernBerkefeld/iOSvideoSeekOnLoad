@@ -1,5 +1,5 @@
 // https://github.com/JoernBerkefeld/iOSvideoSeekOnLoad / MIT License 
-
+// requires jQuery 1.8+
 // seekToInitially (float) : video-time in seconds
 function loadingSeek(seekToInitially, callback) {
 	if("undefined"==typeof callback) {
