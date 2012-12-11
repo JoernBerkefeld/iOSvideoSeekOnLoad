@@ -2,6 +2,9 @@
 
 // seekToInitially (float) : video-time in seconds
 function loadingSeek(seekToInitially, callback) {
+	if("undefined"==typeof callback) {
+		callback = function() {};
+	}
 	var video = $("video"),
 		video0 = video[0],
 		isiOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/) !== null,
@@ -28,7 +31,7 @@ function loadingSeek(seekToInitially, callback) {
 								// hide the loading spinner and the black layer HERE if you added one before
 
 								// optionally execute a callback function once seeking is done
-								// callback();
+								callback();
 							});
 						});
 					});
@@ -41,13 +44,13 @@ function loadingSeek(seekToInitially, callback) {
 				video0.currentTime = seekToInitially; 
 				
 				// optionally execute a callback function once seeking is done
-				// callback();
+				callback();
 			}
 		} else {
 			// seek not necessary
 
 			// optionally execute a callback function once seeking is done
-			// callback();
+			callback();
 		}
 	});
 }
